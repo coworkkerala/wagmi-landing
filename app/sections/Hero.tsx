@@ -1,0 +1,109 @@
+'use client';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import Button from '../components/Button';
+import StatsCard from '../components/StatsCard';
+import { useModal } from '../context/ModalContext';
+import HeroCarousel from '../components/HeroCarousel';
+
+const Hero = () => {
+    const { openContactModal } = useModal();
+
+    return (
+        <section
+            id="home"
+            className="block max-w-[1440px] mx-auto px-6 lg:px-16 w-full pt-4 pb-12 md:pb-20 overflow-hidden"
+        >
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-start">
+                {/* Left Column */}
+                <motion.div
+                    className="flex flex-col items-start space-y-8"
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, ease: 'easeOut' }}
+                >
+                    {/* Logo/Icon */}
+                    <motion.div
+                        className="relative w-32 h-24 mb-4"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.05 }}
+                    >
+                        <Image
+                            src="/img/workspace-illustration.svg"
+                            alt="Wagmi Illustration"
+                            fill
+                            className="object-contain object-left"
+                            priority
+                        />
+                    </motion.div>
+
+                    <motion.h2
+                        className="text-sm md:text-base font-bold tracking-wider text-gray-900 uppercase"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.1 }}
+                    >
+                        Welcome to Wagmi – A Premium Co-Working Hub for Startups
+                    </motion.h2>
+
+                    <motion.h1
+                        className="text-5xl md:text-7xl font-extrabold text-dark leading-[1.1]"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.15 }}
+                    >
+                        DESIGNED FOR <br />
+                        MODERN <span className="text-[#6676D2]">WORK.</span>
+                    </motion.h1>
+
+                    <motion.p
+                        className="text-lg md:text-xl text-gray-600 max-w-lg leading-relaxed font-medium"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.2 }}
+                    >
+                        Wagmi - Modern coworking space offering flexible office space solution for
+                        professionals, startups and teams
+                    </motion.p>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.25 }}
+                    >
+                        <Button variant="primary" className="mt-4" onClick={openContactModal}>
+                            Book a seat
+                        </Button>
+                    </motion.div>
+                </motion.div>
+
+                {/* Right Column */}
+                <div className="flex flex-col gap-6 lg:mt-0 mt-8">
+                    {/* Carousel Section */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                    >
+                        <HeroCarousel />
+                    </motion.div>
+
+                    {/* Bottom Stats Row */}
+                    <motion.div
+                        className="grid grid-cols-2 gap-4 md:gap-6 mt-2"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.35 }}
+                    >
+                        <StatsCard value="50+" label="Active Companies" />
+                        <StatsCard value="5+" label="Spaces Available" />
+                        {/* <StatsCard value="120+" label="Satisfied Clients" /> */}
+                    </motion.div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default Hero;
