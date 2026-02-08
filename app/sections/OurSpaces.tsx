@@ -37,7 +37,7 @@ const spaces: Space[] = [
         title: 'VIRTUAL OFFICE',
         description:
             'A professional business address and services without the need for a physical workspace.',
-        image: '/img/stepper/04.png',
+        image: '/img/stepper/04.jpeg',
     },
     {
         id: 5,

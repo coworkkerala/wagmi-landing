@@ -30,7 +30,7 @@ const testimonials = [
         text: 'Working from home was isolating. Wagmi gave me a dedicated workspace where I can stay productive and still have the flexibility I need as a freelancer.',
         name: 'Maheswar Dileep',
         role: 'Freelancer',
-        image: 'https://placehold.co/100x100/6676d2/ffffff/png?text=MD',
+        image: '/img/testimonials/maheswar.png',
     },
 ];
 
