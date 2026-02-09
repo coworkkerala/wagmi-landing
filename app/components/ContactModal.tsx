@@ -29,8 +29,13 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        // Add your form submission logic here
+
+        const phoneNumber = '918129988389';
+        const text = `Hello, I would like to enquire about Wagmi Workspace.%0A%0AName: ${formData.firstName} ${formData.lastName}%0AEmail: ${formData.email}%0AMessage: ${formData.message}`;
+
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
+        window.open(whatsappUrl, '_blank');
+
         onClose();
     };
 
@@ -132,7 +137,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                                         name="message"
                                         value={formData.message}
                                         onChange={handleChange}
-                                        placeholder="Example Text"
+                                        placeholder="Message"
                                         required
                                         rows={6}
                                         className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors text-gray-700 placeholder:text-gray-400 resize-none"
@@ -141,12 +146,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 
                                 {/* Submit Button */}
                                 <div className="flex justify-center">
-                                    <Button
-                                        type="submit"
-                                        className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-md font-semibold hover:bg-primary/90 transition-colors"
-                                    >
-                                        Submit
-                                    </Button>
+                                    <Button type="submit">Submit</Button>
                                 </div>
                             </form>
                         </motion.div>

@@ -44,7 +44,7 @@ const Hero = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.1 }}
                     >
-                        Wagmi - Modern flexible and coworking office space solution for
+                        Wagmi - Modern and flexible coworking office space solution for
                         professionals, startups and teams
                     </motion.h2>
 
