@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { ModalProvider } from './context/ModalContext';
+import PlausibleAnalytics from './components/PlausibleAnalytics';
 
 const spaceGrotesk = Space_Grotesk({
     variable: '--font-space-grotesk',
@@ -93,6 +94,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <head>
+                <PlausibleAnalytics />
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
